@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Really Cool Record Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+</head>
+<body>
+<div th:include="layout::header"></div>
+
+<section id="content">
+
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+        <span th:text="${successMessage}"> This is a success alert—check it out! </span>
+    </div>
+
+    <div th:if="${errorMessage}"class="alert alert-danger" role="alert">
+        <span th:text="${errorMessage}">This is a danger alert—check it out!</span>
+
+    </div>
+
+    <h2>Edit an existing Record</h2>
+    <form action="/record/edit" method="post">
+        <div class="form-group">
+            <label for="RecordName"> Record Name: </label>
+            <input name="recordName" th:value="${recordName}" type="text" class="form-control" id="RecordName" placeholder="Enter the record name "
+                   aria-describedby="RecordNameHelp">
+            <small id = "recordNameHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+        <div class="form-group">
+            <label for="Record Artist"> Record Artist: </label>
+            <input name="recordArtist" th:value="${recordArtist}" type="text" class="form-control" id="Record Artist" placeholder="Enter the Record Artist "
+                   aria-describedby="RecordArtistHelp">
+            <small id = "recordArtistHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+        <div class="form-group">
+            <label for="RecordPrice"> Record Price: </label>
+            <input name="RecordPrice" th:value="${recordPrice}" type="text" class="form-control" id="RecordPrice" placeholder="Enter the record Price "
+                   aria-describedby="RecordPriceHelp">
+            <small id = "recordPriceHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="RecordGenre"> Record Genre: </label>
+            <input name="recordGenre" th:value="${recordGenre}" type="text" class="form-control" id="RecordGenre" placeholder="Enter the record Price "
+                   aria-describedby="RecordPriceHelp">
+            <small id = "recordGenreHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="RecordDate"> Record Date Release : </label>
+            <input name="recordDate" th:value="${recordReleaseDate}" type="text" class="form-control" id="RecordDate" placeholder="Enter the record Price "
+                   aria-describedby="RecordPriceHelp">
+            <small id = "recordReleaseDateHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+        <div class="form-group">
+            <label for="numberOfTracks"> Record Number of tracks: </label>
+            <input name="numberOfTracks" th:value="${numberOfTracks}" type="text" class="form-control" id="numberOfTracks" placeholder="Enter the record Price "
+                   aria-describedby="RecordNTHelp">
+            <small id = "recordNTHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>
+
+<!--        <div class="form-group">
+            <label for="RecordPrice"> Record Price: </label>
+            <input name="recordPrice" th:value="${recordPrice}" type="text" class="form-control" id="RecordPrice" placeholder="Enter the record Price "
+               e    aria-describedby="RecordPriceHelp">
+            <small id = "recordPriceHelp" class = "form-text text-muted" >What is the name of the record?</small>
+
+        </div>-->
+
+        <input name="recordId" th:value="${recordId}" type="hidden" class="form-control" id="recordId" />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</section>
+<div th:include="layout::footer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

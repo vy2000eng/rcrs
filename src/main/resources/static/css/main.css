@@ -1,0 +1,21 @@
+body{
+    padding: 5px;
+}
+img.logo{
+    display: block;
+    float: right;
+    width: 150px;
+    border-radius: 75px;
+
+}
+
+section#content{
+    min-height: 500px;
+    margin-bottom: 200px;
+
+
+}
+nav{
+    border-radius: 15px;
+}
+
